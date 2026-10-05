@@ -1,0 +1,15 @@
+.env
+__pycache__/
+*.pyc
+data/cardeal.db
+data/browser_profiles/
+data/photos/
+data/top_photos/
+data/run_bot_test_*.log
+data/bot.lock
+data/update_request.json
+data/update_inflight.json
+data/update_result.*
+.venv/
+venv/
+autopull.log

@@ -1,0 +1,9 @@
+# Скрипты для macOS обязаны иметь переводы строк LF: bash спотыкается
+# о \r и падает с непонятным "command not found". Форсим независимо от того,
+# на какой системе (Windows autocrlf) файл был отредактирован — иначе
+# при переносе на Mac скрипты не запускаются двойным кликом.
+*.command text eol=lf
+*.sh      text eol=lf
+*.plist   text eol=lf
+Dockerfile text eol=lf
+docker-compose.yml text eol=lf

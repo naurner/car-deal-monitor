@@ -1,0 +1,16 @@
+# Секреты и данные в образ не попадают: приезжают томом (см. docker-compose.yml).
+.env
+data/
+
+.git/
+.gitignore
+.venv/
+venv/
+__pycache__/
+*.pyc
+docs/
+*.bat
+*.command
+*.plist
+mac-autopull.sh
+autopull.log

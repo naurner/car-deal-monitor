@@ -1,0 +1,29 @@
+services:
+  bot:
+    build:
+      context: .
+      args:
+        # выставляют mac-start.command и mac-autopull.sh перед сборкой
+        GIT_COMMIT: ${GIT_COMMIT:-unknown}
+    image: cardealtg:latest
+    # Имя контейнера намеренно не задаётся — Compose сам назовёт и пересоздаст
+    # его при обновлении, фиксированное имя мешало бы повторному запуску.
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      # Часовой пояс влияет на время в логах и расписание автопроверок.
+      TZ: ${TZ:-Europe/Moscow}
+    volumes:
+      # БД, фото топ-3 и сохранённые сессии площадок — на хосте, чтобы не
+      # терялись при пересборке образа.
+      - ./data:/app/data
+    # Ollama стоит на самом Маке (brew services) — из контейнера это
+    # host.docker.internal. На Docker Desktop имя есть и так, строка — для Linux.
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
