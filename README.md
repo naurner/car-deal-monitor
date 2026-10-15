@@ -8,7 +8,7 @@
 ![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-2.0-D71F00)
 ![Docker](https://img.shields.io/badge/Docker-ready-2496ED?logo=docker&logoColor=white)
 
-> Built for a car flipper in Kyrgyzstan working with **mashina.kg** and **lalafo.kg**, the two largest car classifieds sites in the country.
+> I built it for myself and a few acquaintances who buy and resell cars in Kyrgyzstan through **mashina.kg** and **lalafo.kg**, the two largest car classifieds sites in the country.
 
 ---
 
